@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MingleMateTextFormField extends StatelessWidget {
   final String label;
   final FormFieldSetter onSaved;
-  final FormFieldValidator validator;
+  final Function(String? value) validator;
 
   const MingleMateTextFormField({required this.label, required this.onSaved, required this.validator, Key? key}) : super(key: key);
 
@@ -29,7 +29,9 @@ class MingleMateTextFormField extends StatelessWidget {
                 )
             ),
             onSaved: onSaved,
-            validator: validator,
+            validator: (value) {
+              return validator(value);
+            },
           ),
           Container(height: 16.0,)
         ],
