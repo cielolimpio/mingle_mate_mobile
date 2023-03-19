@@ -29,7 +29,7 @@ class _JoinScreenState extends State<JoinScreen> {
                 MingleMateTextFormField(label: "비밀번호", onSaved: (newValue) {}, validator: (value) => null),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     MingleMateElevatedButton(text: '취소하기', buttonColor: Colors.white, textColor: Color(0xFFFCADAD)),
                     MingleMateElevatedButton(text: '완료', buttonColor: Color(0xFFFCADAD), textColor: Colors.white)
                   ],
