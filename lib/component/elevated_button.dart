@@ -4,6 +4,7 @@ class MingleMateElevatedButton extends StatelessWidget {
   final String text;
   final Color buttonColor;
   final Color textColor;
+  final VoidCallback onPressed;
   double? buttonWidth = 160.0;
   double? buttonHeight = 60.0;
 
@@ -11,6 +12,7 @@ class MingleMateElevatedButton extends StatelessWidget {
       {required this.text,
       required this.buttonColor,
       required this.textColor,
+      required this.onPressed,
       double? buttonWidth,
       double? buttonHeight,
       Key? key})
@@ -32,7 +34,7 @@ class MingleMateElevatedButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
             backgroundColor: buttonColor,
             fixedSize: Size(buttonWidth!, buttonHeight!)),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           text,
           style: TextStyle(
