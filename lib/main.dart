@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'layout/login.dart';
+import 'package:mingle_mate_mobile/screens/login.dart';
 
 void main() {
   runApp(const MyApp());
