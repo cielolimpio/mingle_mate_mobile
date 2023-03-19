@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mingle_mate_mobile/component/slider_bar.dart';
 import 'package:mingle_mate_mobile/screens/join.dart';
 import 'package:mingle_mate_mobile/screens/login.dart';
 

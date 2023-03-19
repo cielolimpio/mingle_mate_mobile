@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mingle_mate_mobile/component/elevated_button.dart';
 import 'package:mingle_mate_mobile/component/mingle_mate_app_bar.dart';
+import 'package:mingle_mate_mobile/component/slider_bar.dart';
 import 'package:mingle_mate_mobile/component/text_form_field.dart';
 
 class JoinScreen extends StatefulWidget {
