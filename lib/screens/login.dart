@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../component/mingle_mate_app_bar.dart';
+import '../component/app_bar.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
