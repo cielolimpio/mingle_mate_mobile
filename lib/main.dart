@@ -12,6 +12,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: JoinScreen());
+    return MaterialApp(
+        initialRoute: '/login',
+
+      routes: {
+        '/login':(context) => LoginScreen(),
+        '/join':(context) => JoinScreen(),
+      },
+    );
   }
 }

@@ -90,6 +90,7 @@ class _JoinScreenState extends State<JoinScreen> {
                         buttonColor: Colors.white,
                         textColor: Color(0xFFFCADAD),
                         onPressed: (){
+                          Navigator.pushNamed(context, '/login');
 
                         },
                     ),
@@ -100,6 +101,7 @@ class _JoinScreenState extends State<JoinScreen> {
                         onPressed: () async {
                           if(formKey.currentState!.validate()){
                             print("검증 완료");
+                            Navigator.pushNamed(context, '/login');
                           }
                         },
                     )
