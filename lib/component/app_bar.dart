@@ -9,6 +9,9 @@ class MingleMateAppBar extends PreferredSize {
   }) : super(
     preferredSize: Size.fromHeight(60.0),
     child: AppBar(
+      iconTheme: const IconThemeData(
+        color: Colors.black
+      ),
         backgroundColor: Colors.white,
         elevation: 0,
         title: Text(

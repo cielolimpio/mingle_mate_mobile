@@ -85,6 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         onPressed: () async {
                           if(formKey.currentState!.validate()){
                             print("검증 완료 - 로그인");
+                            Navigator.pushNamed(context, '/home');
                           }
                         },
                       )
