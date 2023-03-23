@@ -16,22 +16,25 @@ class MingleMateTextFormField extends StatelessWidget {
         children: [
           Text(label,
             style: const TextStyle(fontSize: 12.0, fontWeight: FontWeight.w700),),
-          TextFormField(
-            decoration: InputDecoration(
-                labelText: "$label을(를) 입력해주세요.",
-                enabledBorder: OutlineInputBorder(
-                    borderSide:
-                    const BorderSide(
-                      width: 0.5,
-                      color: Color(0xff666666),
-                    ),
-                    borderRadius: BorderRadius.circular(10.0)
-                )
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12.0),
+            child: TextFormField(
+              decoration: InputDecoration(
+                  labelText: "$label을(를) 입력해주세요.",
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                      const BorderSide(
+                        width: 0.5,
+                        color: Color(0xff666666),
+                      ),
+                      borderRadius: BorderRadius.circular(10.0)
+                  )
+              ),
+              onSaved: onSaved,
+              validator: (value) {
+                return validator(value);
+              },
             ),
-            onSaved: onSaved,
-            validator: (value) {
-              return validator(value);
-            },
           ),
           Container(height: 16.0,)
         ],
