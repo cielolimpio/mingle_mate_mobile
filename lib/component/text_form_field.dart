@@ -4,8 +4,9 @@ class MingleMateTextFormField extends StatelessWidget {
   final String label;
   final FormFieldSetter onSaved;
   final Function(String? value) validator;
+  String? placeHolder;
 
-  const MingleMateTextFormField({required this.label, required this.onSaved, required this.validator, Key? key}) : super(key: key);
+  MingleMateTextFormField({required this.label, required this.onSaved, required this.validator, this.placeHolder, Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class MingleMateTextFormField extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 12.0),
             child: TextFormField(
               decoration: InputDecoration(
-                  labelText: "$label을(를) 입력해주세요.",
+                  labelText: placeHolder == null ? "$label을(를) 입력해주세요." : "$placeHolder",
                   enabledBorder: OutlineInputBorder(
                       borderSide:
                       const BorderSide(

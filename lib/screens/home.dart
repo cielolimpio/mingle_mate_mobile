@@ -34,7 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     text: "프로필 등록하기",
                     buttonColor: PRIMARY_COLOR,
                     textColor: Colors.white,
-                    onPressed: () {})
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/createProfile');
+                    })
               ],
             ),
             Divider(

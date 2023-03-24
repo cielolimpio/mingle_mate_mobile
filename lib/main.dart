@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mingle_mate_mobile/component/slider_bar.dart';
+import 'package:mingle_mate_mobile/screens/create_profile.dart';
 import 'package:mingle_mate_mobile/screens/home.dart';
 import 'package:mingle_mate_mobile/screens/join.dart';
 import 'package:mingle_mate_mobile/screens/login.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/login':(context) => LoginScreen(),
         '/join':(context) => JoinScreen(),
         '/home': (context) => HomeScreen(),
+        '/createProfile' :(context) => CreateProfileScreen(),
       },
     );
   }
