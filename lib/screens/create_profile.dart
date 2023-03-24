@@ -154,25 +154,9 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
             const SizedBox(
               height: 20,
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('사진찍기'),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Divider(
-              thickness: 3,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                _getPhotoLibraryImage();
-              },
-              child: const Text('갤러리'),
-            ),
+            MingleMateElevatedButton(text: '갤러리', buttonColor: PRIMARY_COLOR, textColor: Colors.white, onPressed: (){
+              _getPhotoLibraryImage();
+            }),
             const SizedBox(
               height: 20,
             ),
@@ -192,7 +176,7 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
       });
     } else {
       if (kDebugMode) {
-        print('이미지 선택안함');
+        print('이미지 선택X');
       }
     }
   }
