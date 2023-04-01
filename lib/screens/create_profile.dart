@@ -5,12 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mingle_mate_mobile/component/app_bar.dart';
 import 'package:mingle_mate_mobile/component/elevated_button.dart';
-import 'package:mingle_mate_mobile/component/radio_button_gender.dart';
 import 'package:mingle_mate_mobile/component/radio_button_period.dart';
+import 'package:mingle_mate_mobile/component/radio_button_row.dart';
 import 'package:mingle_mate_mobile/component/text.dart';
 import 'package:mingle_mate_mobile/component/text_form_field.dart';
 import '../component/dropdown.dart';
 import '../constants/color.dart';
+import '../constants/enum.dart';
 
 class CreateProfileScreen extends StatefulWidget {
   const CreateProfileScreen({Key? key}) : super(key: key);
@@ -78,35 +79,33 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
                 ),
               ),
             ),
-            const MingleMateRadioButtonGender(),
+            MingleMateRadioButtonRow(
+                options: [Gender.MALE.korName, Gender.FEMALE.korName]
+            ),
             const MingleMateMainText(
                 text: '카테고리 (최대 3개까지 등록 가능)',
                 verticalPadding: 8.0,
                 horizontalPadding: 8.0),
-            MingleMateSubText(
-                text: '카테고리1', verticalPadding: 2.0, horizontalPadding: 8.0),
-            MingleMateDropdown(options: ['스터디', '스포츠', '게임']),
-            MingleMateSubText(
-                text: '카테고리 1의 주기',
-                verticalPadding: 8.0,
-                horizontalPadding: 8.0),
-            MingleMateRadioButtonPeriod(),
-            MingleMateSubText(
-                text: '카테고리2', verticalPadding: 2.0, horizontalPadding: 8.0),
-            MingleMateDropdown(options: ['스터디', '스포츠', '게임']),
-            MingleMateSubText(
-                text: '카테고리 2의 주기',
-                verticalPadding: 8.0,
-                horizontalPadding: 8.0),
-            MingleMateRadioButtonPeriod(),
-            MingleMateSubText(
-                text: '카테고리3', verticalPadding: 2.0, horizontalPadding: 8.0),
-            MingleMateDropdown(options: ['스터디', '스포츠', '게임']),
-            MingleMateSubText(
-                text: '카테고리 3의 주기',
-                verticalPadding: 8.0,
-                horizontalPadding: 8.0),
-            MingleMateRadioButtonPeriod(),
+            Column(
+                children: [1, 2, 3].map((i) =>
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        MingleMateSubText(
+                            text: '카테고리${i}', verticalPadding: 2.0, horizontalPadding: 8.0),
+                        const MingleMateDropdown(options: ['스터디', '스포츠', '게임']),
+                        MingleMateSubText(
+                            text: '카테고리 ${i}의 주기',
+                            verticalPadding: 8.0,
+                            horizontalPadding: 8.0),
+                        MingleMateRadioButtonRow(
+                          options: [Period.PERIODIC.korName, Period.FREE.korName, Period.NOMATTER.korName],
+                        )
+                      ]
+                  )
+              ).toList()
+            ),
+
             MingleMateTextFormField(
               label: '자기소개(가능한 요일, 공부과목, 이상형 특징 등 자유롭게)',
               onSaved: (newValue) {},
@@ -168,7 +167,9 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
 
   _getPhotoLibraryImage() async {
     final pickedImage = await ImagePicker().pickImage(
-        source: ImageSource.gallery);
+        source: ImageSource.gallery,
+      imageQuality: 50
+    );
     if (pickedImage != null) {
       setState(() {
         _pickedImageList.add(pickedImage);
@@ -195,8 +196,9 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
           _showBottomSheet();
         },
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.add, size: imageWidth),
+            Icon(Icons.add, size: imageWidth / 2),
           ],
         ),
       ),
