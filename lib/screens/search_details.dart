@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:mingle_mate_mobile/component/app_bar.dart';
 import 'package:mingle_mate_mobile/component/elevated_button.dart';
 import 'package:mingle_mate_mobile/component/icon_button.dart';
-import 'package:mingle_mate_mobile/component/radio_button_gender.dart';
+import 'package:mingle_mate_mobile/component/radio_button_row.dart';
 import 'package:mingle_mate_mobile/component/slider_bar.dart';
 import 'package:mingle_mate_mobile/component/text.dart';
 import 'package:mingle_mate_mobile/component/text_form_field.dart';
 import 'package:mingle_mate_mobile/constants/color.dart';
+
+import '../constants/enum.dart';
 
 class SearchDetailsScreen extends StatefulWidget {
   const SearchDetailsScreen({Key? key}) : super(key: key);
@@ -28,7 +30,9 @@ class _SearchDetailsScreenState extends State<SearchDetailsScreen> {
         child: ListView(
           children: [
             const MingleMateMainText(text: "성별", verticalPadding: 8.0, horizontalPadding: 8.0),
-            const MingleMateRadioButtonGender(),
+            MingleMateRadioButtonRow(
+                options: [Gender.MALE.korName, Gender.FEMALE.korName]
+            ),
 
             const Divider(
               height: 16.0,
