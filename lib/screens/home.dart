@@ -29,7 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     text: "세부 조건으로 검색",
                     buttonColor: PRIMARY_COLOR,
                     textColor: Colors.white,
-                    onPressed: () {}),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/searchDetails');
+                    }),
                 MingleMateElevatedButton(
                     text: "프로필 등록하기",
                     buttonColor: PRIMARY_COLOR,

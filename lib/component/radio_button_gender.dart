@@ -15,28 +15,41 @@ class _MingleMateRadioButtonGenderState extends State<MingleMateRadioButtonGende
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: [
-        RadioListTile(
-            activeColor: PRIMARY_COLOR,
-            title: Text(Gender.MALE.korName),
-            value: Gender.MALE.korName,
-            groupValue: _current,
-            onChanged: (value){
-              setState(() {
-                _current = value.toString();
-              });
-            }),
-        RadioListTile(
-            activeColor: PRIMARY_COLOR,
-            title: Text(Gender.FEMALE.korName),
-            value: Gender.FEMALE.korName,
-            groupValue: _current,
-            onChanged: (value){
-              setState(() {
-                _current = value.toString();
-              });
-            }),
+        SizedBox(
+          width: 120.0,
+          child: RadioListTile(
+              activeColor: PRIMARY_COLOR,
+              title: Text(Gender.MALE.korName),
+              value: Gender.MALE.korName,
+              groupValue: _current,
+              onChanged: (value){
+                setState(() {
+                  _current = value.toString();
+                });
+              },
+            visualDensity: VisualDensity(horizontal: VisualDensity.minimumDensity),
+            contentPadding: EdgeInsets.all(0),
+          ),
+        ),
+        SizedBox(
+          width: 120.0,
+          child: RadioListTile(
+              activeColor: PRIMARY_COLOR,
+              title: Text(Gender.FEMALE.korName),
+              value: Gender.FEMALE.korName,
+              groupValue: _current,
+              onChanged: (value){
+                setState(() {
+                  _current = value.toString();
+                });
+              },
+            contentPadding: EdgeInsets.all(0),
+            visualDensity: VisualDensity(horizontal: VisualDensity.minimumDensity),
+
+          ),
+        ),
       ],
     );
   }

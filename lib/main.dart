@@ -4,6 +4,7 @@ import 'package:mingle_mate_mobile/screens/create_profile.dart';
 import 'package:mingle_mate_mobile/screens/home.dart';
 import 'package:mingle_mate_mobile/screens/join.dart';
 import 'package:mingle_mate_mobile/screens/login.dart';
+import 'package:mingle_mate_mobile/screens/search_details.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         '/join':(context) => JoinScreen(),
         '/home': (context) => HomeScreen(),
         '/createProfile' :(context) => CreateProfileScreen(),
+        '/searchDetails' : (context) => SearchDetailsScreen(),
       },
     );
   }
