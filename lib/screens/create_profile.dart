@@ -4,13 +4,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mingle_mate_mobile/component/app_bar.dart';
-import 'package:mingle_mate_mobile/component/drop_down.dart';
-import 'package:mingle_mate_mobile/component/drop_down_list.dart';
 import 'package:mingle_mate_mobile/component/elevated_button.dart';
 import 'package:mingle_mate_mobile/component/radio_button_gender.dart';
 import 'package:mingle_mate_mobile/component/radio_button_period.dart';
 import 'package:mingle_mate_mobile/component/text.dart';
 import 'package:mingle_mate_mobile/component/text_form_field.dart';
+import '../component/dropdown.dart';
 import '../constants/color.dart';
 
 class CreateProfileScreen extends StatefulWidget {
@@ -115,6 +114,7 @@ class _CreateProfileScreenState extends State<CreateProfileScreen> {
               placeHolder: "자기소개를 입력해주세요.",
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 MingleMateElevatedButton(
                     text: '취소',

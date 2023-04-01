@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mingle_mate_mobile/screens/join.dart';
 import '../component/app_bar.dart';
 import '../component/elevated_button.dart';
 import '../component/text_form_field.dart';
