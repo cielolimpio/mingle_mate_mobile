@@ -27,7 +27,6 @@ class MingleMateElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (buttonWidth != null) buttonWidth = buttonWidth;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ElevatedButton(
